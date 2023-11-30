@@ -154,7 +154,38 @@ console.log("500'den kücük sirali sayilar" + siralisayilar);
 
 // 3f çözümü
 
-/* kodlar buraya */
+/* 3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
+		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
+		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız. */
+
+    function tekrarEdenSayilar(sayilar) {
+      let tekrarObje = {};
+      let tekrarArr = [];
+
+      for(let i = 0; i < sayilar.length; i++) {
+        let sayi = sayilar[i];
+        if(tekrarObje[sayi] === undefined) {
+          tekrarObje[sayi] = 1;
+        } else {
+          tekrarObje[sayi]++;
+        }
+      }
+
+      for(let sayi in tekrarObje) {
+        if(tekrarObje[sayi] > 1) {
+          let tekrarString = `${sayi} sayısı ${tekrarObje[sayi]} kere tekrar edilmiştir`
+          tekrarArr.push(tekrarString);
+        }
+      }
+      return tekrarArr;
+    }
+
+    console.log(tekrarEdenSayilar(sayilar));
+
+
+    
+
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
