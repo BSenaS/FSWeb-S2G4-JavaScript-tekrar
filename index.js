@@ -1,4 +1,6 @@
 /* Aşağıda global olarak tanımlanmış değişkenler bulunmaktadır, bunları değiştirmeyiniz. Açıklamaları takip ederek görevleri tamamlayın. */
+console.log("Batuhan Sena Sert");
+
 
 const pi = 3.14159;
 
