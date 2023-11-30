@@ -99,8 +99,7 @@ let ucetambolunenler = [],
   enbuyuk = 0,
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar = [],
-  siralisayilar = [],
-  tekraredensayilar;
+  siralisayilar = [];
 
 // 3a çözümü
 
@@ -158,9 +157,16 @@ console.log("500'den kücük sirali sayilar" + siralisayilar);
 		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
 		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız. */
 
+    // 1 . tekraredensayilar dizisini olustur 
+    // 2. sayilar dizisi içerisin de ki herbir sayinin kaç kere tekrarlandığını bul
+    // ve kaç kere tekrarlandığını bir nesneye aktar 
+    // 3. nesneyi kullarak tekraredensayilar dizisine pushla
+
+    let tekraredensayilar = [];
     function tekrarEdenSayilar(sayilar) {
+      // tekrar edilen sayıları iç
       let tekrarObje = {};
-      let tekrarArr = [];
+      
 
       for(let i = 0; i < sayilar.length; i++) {
         let sayi = sayilar[i];
@@ -174,10 +180,10 @@ console.log("500'den kücük sirali sayilar" + siralisayilar);
       for(let sayi in tekrarObje) {
         if(tekrarObje[sayi] > 1) {
           let tekrarString = `${sayi} sayısı ${tekrarObje[sayi]} kere tekrar edilmiştir`
-          tekrarArr.push(tekrarString);
+          tekraredensayilar.push(tekrarString);
         }
       }
-      return tekrarArr;
+      return tekraredensayilar;
     }
 
     console.log(tekrarEdenSayilar(sayilar));
